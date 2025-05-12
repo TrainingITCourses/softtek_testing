@@ -1,0 +1,29 @@
+{
+  "name": "softtek-testing-ed1",
+  "version": "1.0.0",
+  "description": "Testing Softtek ed 1",
+  "author": {
+    "name": "Alberto Basalo",
+    "company": "AI code Academy",
+    "website": "https://aicode.academy",
+    "email": "albertobasalo@aicode.academy"
+  },
+  "main": "src/main.ts",
+  "scripts": {
+    "start": "node src/main.ts",
+    "dev": "node --watch  src/main.ts",
+    "test": "node --test",
+    "test:watch": "node --test --watch"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.1",
+    "@types/node": "^22.15.17",
+    "prettier": "^3.5.3"
+  }
+}

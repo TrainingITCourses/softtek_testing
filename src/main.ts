@@ -1,13 +1,4 @@
-import express from "express";
+import { add } from "./shared/maths.ts";
 
-const app: express.Application = express();
-const port = "3000";
+console.log(add(1, 3));
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-  console.log("Response sent");
-});
-
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
-});

@@ -2,7 +2,7 @@
 
 Curso de Testing para Softtek
 
-Repository: [TrainingIT courses / softtek testing ed1](https://github.com/TrainingITCourses/softtek_testing_ed1)
+Repository: [TrainingIT courses / softtek testing](https://github.com/TrainingITCourses/softtek_testing)
 
 ## Overview
 
@@ -11,7 +11,7 @@ This archetype provides a standardized template and structure for creating new E
 ## Installation
 
 ```bash
-# got hub clone (TBD)
+# git hub clone (TBD)
 ```
 
 ## Usage

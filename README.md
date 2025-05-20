@@ -1,4 +1,4 @@
-# Softtek Testing 
+# Softtek Testing
 
 Curso de Testing para Softtek
 
@@ -29,11 +29,7 @@ npm run dev
 npm run lint
 ```
 
-
 ## Credits
 
 - [Alberto Basalo](https://albertobasalo.dev)
 - [AI code Academy](https://aicode.academy)
-- [ArchetypeExpressAPI](https://github.com/AIcodeAcademy/ArchetypeExpressAPI)
-
-

@@ -6,7 +6,7 @@ Repository: [TrainingIT courses / softtek testing](https://github.com/TrainingIT
 
 ## Overview
 
-This archetype provides a standardized template and structure for creating new Express API applications.
+This archetype provides a standardized template and structure for creating tests with node.
 
 ## Installation
 

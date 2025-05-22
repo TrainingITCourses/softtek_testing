@@ -11,7 +11,7 @@
   "main": "src/main.ts",
   "scripts": {
     "start": "node src/main.ts",
-    "test": "node --test --watch"
+    "test": "node --test"
   },
   "keywords": [],
   "license": "ISC",

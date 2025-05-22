@@ -34,7 +34,7 @@ export const idUtils = {
       seed = await file.readJson("seed.json");
     }
     seed++;
-    await file.writeJson("seed.json", seed);
+    await file.writeJson("seed.json", seed + 1);
     return seed;
   },
   /**
@@ -49,5 +49,4 @@ export const idUtils = {
   get seed(): number {
     return seed;
   },
- 
 };

@@ -31,7 +31,7 @@ test("buy should add asset to portfolio or throw error", async () => {
   await assetsServiceSut.buildFor(dummyUserId, dummyAmount);
   // Act
   try {
-    assetsServiceSut.buy("APPL", 100);
+    assetsServiceSut.buy("AAPL", 100);
     // Assert
     const expectedAssetsLength = 2;
     expect(assetsServiceSut.portfolio.assets.length).toBe(expectedAssetsLength);

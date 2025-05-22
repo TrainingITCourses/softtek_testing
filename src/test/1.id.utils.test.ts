@@ -1,9 +1,7 @@
-import assert from "node:assert";
-import { test } from "node:test";
-import { file } from "../app/file/file.adapter.ts";
-import { idUtils } from "../app/utils/id.utils.ts";
-
 // Retorno determinista
+
+import { file } from "../app/file/file.adapter";
+import { idUtils } from "../app/utils/id.utils";
 
 test("should extract the seed from an id", function () {
   // Arrange
@@ -13,7 +11,7 @@ test("should extract the seed from an id", function () {
   // Assert
   const expectedSeed = 2;
   // assert.strictEqual(actualSeed, expectedSeed);
-  assert.ok(actualSeed === expectedSeed);
+  expect(actualSeed).toBe(expectedSeed);
 });
 
 // Retorno aleatorio
@@ -26,33 +24,30 @@ test("should generate ids of length more than 3", async () => {
   // Assert
   const actualLength = actualId.length;
   const expectedLength = 3;
-  assert.ok(actualLength >= expectedLength);
+  //assert.ok(actualLength >= expectedLength);
+  expect(actualLength).toBeGreaterThanOrEqual(expectedLength);
 });
 
 // Cambio de estado
 
-test("should change last value", async () => {
+test("last should return a bigger last number after generating an id", async () => {
   // Arrange
-  //const initialLast = idUtils.last;
+  const expectedLast = idUtils.last;
+  await idUtils.generate();
   // Act
-  const id = await idUtils.generate();
-  const expectedLast = id.split(".")[1];
   const actualLast = idUtils.last;
   // Assert
-  assert.equal(actualLast, expectedLast);
-  //const newLast = idUtils.last;
-  // assert.ok(newLast > initialLast);
+  expect(actualLast).toBeGreaterThan(expectedLast);
 });
 
-// Efecto secundario
+// Efectos secundarios
 
-test("should write a seed json file", async () => {
+test("seedJson should match seed from generated id", async () => {
   // Arrange
-
-  // Act
   const id = await idUtils.generate();
-  const expectedSeed = id.split(".")[0];
+  const expectedSeed = idUtils.extractSeed(id);
+  // Act
   const actualSeed = await file.readJson("seed.json");
   // Assert
-  assert.equal(actualSeed, expectedSeed);
+  expect(actualSeed).toBe(expectedSeed);
 });

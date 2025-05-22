@@ -1,7 +1,7 @@
 import assert from "node:assert";
 import { test } from "node:test";
-import { file } from "../src/file/file.adapter.ts";
-import { idUtils } from "../src/utils/id.utils.ts";
+import { file } from "../app/file/file.adapter.ts";
+import { idUtils } from "../app/utils/id.utils.ts";
 
 // Retorno determinista
 

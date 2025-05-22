@@ -34,7 +34,7 @@ export const idUtils = {
       seed = await file.readJson("seed.json");
     }
     seed++;
-    await file.writeJson("seed.json", seed + 1);
+    await file.writeJson("seed.json", seed);
     return seed;
   },
   /**

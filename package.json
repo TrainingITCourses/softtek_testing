@@ -11,12 +11,8 @@
   "main": "src/main.ts",
   "scripts": {
     "start": "node src/main.ts",
-<<<<<<< HEAD
-    "test": "node --test"
-=======
     "test": "jest",
     "test:watch": "jest --watch"
->>>>>>> jest
   },
   "keywords": [],
   "license": "ISC",

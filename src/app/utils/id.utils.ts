@@ -2,7 +2,7 @@ import { file } from "../file/file.adapter.ts";
 
 let last = 0;
 let seed = 0;
-
+let _file = file;
 /**
  * Utils for generating unique IDs
  */
@@ -30,11 +30,11 @@ export const idUtils = {
    */
   getSeed: async () => {
     if (seed > 0) return seed;
-    if (await file.exists("seed.json")) {
-      seed = await file.readJson("seed.json");
+    if (await _file.exists("seed.json")) {
+      seed = await _file.readJson("seed.json");
     }
     seed++;
-    await file.writeJson("seed.json", seed);
+    await _file.writeJson("seed.json", seed);
     return seed;
   },
   /**
@@ -48,5 +48,9 @@ export const idUtils = {
    */
   get seed(): number {
     return seed;
+  },
+
+  set file(value: any) {
+    _file = value;
   },
 };

@@ -33,17 +33,19 @@ test("getSeed should call getSeed once", async () => {
 
 test("generate should use fake file adapter", async () => {
   // Arrange
+  jest.clearAllMocks();
+  const fakeSeed = 314;
+  const expectedSeed = fakeSeed + 1;
   const fileAdapterFake = {
-    readJson: jest.fn().mockResolvedValue(42),
+    readJson: jest.fn().mockResolvedValue(fakeSeed),
     writeJson: jest.fn().mockResolvedValue(undefined),
     exists: jest.fn().mockResolvedValue(true),
   };
-  // biome-ignore lint: any for testing
-  // ToDo: change source code
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   idUtils.file = fileAdapterFake as any;
   // Act
   const actualId = await idUtils.generate();
   const actualSeed = idUtils.extractSeed(actualId);
   // Assert
-  expect(actualSeed).toBe(15);
+  expect(actualSeed).toBe(expectedSeed);
 });

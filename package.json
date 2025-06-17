@@ -17,7 +17,8 @@
     "commitlint": "commitlint --edit",
     "test:watch": "jest --watch",
     "prepare": "husky",
-    "release": "commit-and-tag-version"
+    "release": "commit-and-tag-version",
+    "postrelease": "git push --follow-tags origin main "
   },
   "keywords": [],
   "license": "ISC",

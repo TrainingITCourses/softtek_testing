@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.0.0](https://github.com/TrainingITCourses/softtek_testing_ed1/compare/v1.1.0...v2.0.0) (2025-06-17)
+
+
+### ⚠ BREAKING CHANGES
+
+* id generation changes live
+
+### Bug Fixes
+
+* id generation changes live ([40e37a3](https://github.com/TrainingITCourses/softtek_testing_ed1/commit/40e37a34aa29e53c26989d31f3527e0d0dd97bbe))
+
 ## 1.1.0 (2025-06-17)
 
 

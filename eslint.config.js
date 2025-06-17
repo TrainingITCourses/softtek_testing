@@ -17,6 +17,9 @@ export default defineConfig([
   ...tseslint.configs.recommended,
   eslintConfigPrettier,
   {
-    rules: {},
+    rules: {
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/no-unused-vars": "off",
+    },
   },
 ]);

@@ -44,7 +44,7 @@ describe("The assets service", () => {
   beforeEach(async () => {
     assetsService = new AssetsService(
       fakeRatesGateway,
-      fakePortfolioRepository
+      fakePortfolioRepository,
     );
     await assetsService.buildFor(inputUserId, inputAmount);
   });
@@ -84,7 +84,7 @@ describe("The assets service", () => {
       // Act and Assert
       const expectedError = `Symbol ${invalidSymbol} not found`;
       expect(() => assetsService.buy(invalidSymbol, validQuantity)).toThrow(
-        expectedError
+        expectedError,
       );
     });
   });
@@ -99,7 +99,7 @@ describe("The assets service", () => {
       const expectedError = `Not enough cash. Need: ${cost} - Have: ${have}`;
       // Act and Assert
       expect(() => assetsService.buy(validSymbol, invalidQuantity)).toThrow(
-        expectedError
+        expectedError,
       );
     });
   });
@@ -111,7 +111,7 @@ describe("The assets service", () => {
       // Assert
       const currentPortfolio = assetsService.portfolio;
       expect(fakePortfolioRepository.save).toHaveBeenCalledWith(
-        currentPortfolio
+        currentPortfolio,
       );
       expect(fakePortfolioRepository.save).toHaveBeenCalledTimes(1);
     });

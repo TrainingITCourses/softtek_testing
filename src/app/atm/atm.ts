@@ -13,7 +13,7 @@ export class ATM {
 
   constructor(
     private balanceRepository: BalanceRepository,
-    bankService: BankService
+    bankService: BankService,
   ) {
     this.balance = balanceRepository.readBalance();
     this.limit = bankService.getLimit();

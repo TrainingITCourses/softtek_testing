@@ -1,6 +1,7 @@
 # Add Jest to node project
 
 ## Install Jest
+
 ```bash
 npm install --save-dev jest
 npm install --save-dev @types/jest
@@ -8,28 +9,35 @@ npm install --save-dev ts-jest
 ```
 
 ## Create Jest config file
+
 `jest.config.mjs`
+
 ```js
 /** @type {import('ts-jest').JestConfigWithTsJest} */
 export default {
-  preset: 'ts-jest/presets/default-esm',
-  roots: ['<rootDir>/src'], 
-  testEnvironment: 'node',
-  extensionsToTreatAsEsm: ['.ts'],
+  preset: "ts-jest/presets/default-esm",
+  roots: ["<rootDir>/src"],
+  testEnvironment: "node",
+  extensionsToTreatAsEsm: [".ts"],
   moduleNameMapper: {
-    '^(\\.{1,2}/.*)\\.js$': '$1',
+    "^(\\.{1,2}/.*)\\.js$": "$1",
   },
   transform: {
-    '^.+\\.tsx?$': ['ts-jest', {
-      useESM: true,
-      tsconfig: 'tsconfig.json'
-    }]
-  }
+    "^.+\\.tsx?$": [
+      "ts-jest",
+      {
+        useESM: true,
+        tsconfig: "tsconfig.json",
+      },
+    ],
+  },
 };
 ```
 
 ## Configure TypeScript
+
 `tsconfig.json`
+
 ```json
 {
   "compilerOptions": {
@@ -47,21 +55,16 @@ export default {
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]
-} 
+}
 ```
 
 ## Add Jest to package.json
+
 `package.json`
-```json 
+
+```json
 "scripts": {
   "test": "jest",
   "test:watch": "jest --watch"
 }
 ```
-
-
-
-
-
-
-

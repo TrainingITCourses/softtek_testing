@@ -13,7 +13,7 @@ export class AssetsService {
 
   constructor(
     ratesGateway: RatesGateway,
-    portfolioRepository: PortfolioRepository = new PortfolioFileRepository()
+    portfolioRepository: PortfolioRepository = new PortfolioFileRepository(),
   ) {
     this.ratesGateway = ratesGateway;
     this.portfolioRepository = portfolioRepository;
@@ -43,13 +43,13 @@ export class AssetsService {
     const cost = rate.price * units;
     if (!this.hasEnoughUnits("USD", cost)) {
       const usdAsset = this.portfolio.assets.find(
-        (asset) => asset.symbol === "USD"
+        (asset) => asset.symbol === "USD",
       );
       const have = usdAsset ? usdAsset.quantity : 0;
       throw new Error(`Not enough cash. Need: ${cost} - Have: ${have}`);
     }
     const asset = this.portfolio.assets.find(
-      (asset) => asset.symbol === symbol
+      (asset) => asset.symbol === symbol,
     );
     if (asset) {
       asset.quantity += units;
@@ -73,7 +73,7 @@ export class AssetsService {
       throw new Error("Not enough units");
     }
     const asset = this.portfolio.assets.find(
-      (asset) => asset.symbol === symbol
+      (asset) => asset.symbol === symbol,
     );
     if (!asset) {
       throw new Error("Asset not found");
@@ -85,7 +85,7 @@ export class AssetsService {
     asset.lastPrice = rate.price;
     // add to usd cash
     const usdAsset = this.portfolio.assets.find(
-      (asset) => asset.symbol === "USD"
+      (asset) => asset.symbol === "USD",
     );
     if (usdAsset) {
       usdAsset.quantity += profit;
@@ -106,7 +106,7 @@ export class AssetsService {
 
   public print() {
     console.log(
-      `Portfolio: ${this.portfolio.id} for ${this.portfolio.ownerId}`
+      `Portfolio: ${this.portfolio.id} for ${this.portfolio.ownerId}`,
     );
     console.log(`Last updated: ${this.portfolio.updatedAt}`);
     console.log(`Last value: ${this.portfolio.lastValue}`);
@@ -114,7 +114,7 @@ export class AssetsService {
     console.log("----------------------------------------");
     for (const asset of this.portfolio.assets) {
       console.log(
-        `${asset.symbol} - ${asset.quantity} - ${asset.lastPrice} - ${asset.quantity * asset.lastPrice}`
+        `${asset.symbol} - ${asset.quantity} - ${asset.lastPrice} - ${asset.quantity * asset.lastPrice}`,
       );
     }
   }
@@ -125,7 +125,7 @@ export class AssetsService {
 
   private hasEnoughUnits(symbol: string, units: number): boolean {
     const asset = this.portfolio.assets.find(
-      (asset) => asset.symbol === symbol
+      (asset) => asset.symbol === symbol,
     );
     return asset ? asset.quantity >= units : false;
   }
@@ -133,7 +133,7 @@ export class AssetsService {
   public calculateValue(): number {
     return this.portfolio.assets.reduce(
       (acc, asset) => acc + asset.quantity * asset.lastPrice,
-      0
+      0,
     );
   }
 }

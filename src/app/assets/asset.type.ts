@@ -7,4 +7,4 @@ export type Asset = {
   quantity: number;
   updatedAt: Date;
   lastPrice: number;
-} 
+};

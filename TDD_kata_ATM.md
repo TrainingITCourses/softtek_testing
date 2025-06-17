@@ -2,7 +2,7 @@
 
 ## Specifications
 
-You need to implement a simple ATM machine that allows th user to withdraw money. 
+You need to implement a simple ATM machine that allows th user to withdraw money.
 
 The ATM stores its balance in a json file.
 
@@ -14,4 +14,3 @@ The user has a limit per withdrawal given by an external service.
 
 - When the amount can not be dispensed, the ATM should return an error message.
 - When the amount is greater than the balance or the limit, the ATM should return the maximum amount that can be withdrawn.
-

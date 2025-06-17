@@ -6,11 +6,11 @@ export type Portfolio = {
   assets: Asset[];
   updatedAt: Date;
   lastValue: number;
-}
+};
 export const defaultPortfolio: Portfolio = {
-  id: '',
-  ownerId: '',
+  id: "",
+  ownerId: "",
   assets: [],
   updatedAt: new Date(),
   lastValue: 0,
-}
+};

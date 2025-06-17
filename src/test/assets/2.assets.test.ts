@@ -57,7 +57,7 @@ test("save should call repository save", async () => {
   };
   const assetsServiceSut = new AssetsService(
     ratesGateway,
-    portfolioRepositorySpy as any
+    portfolioRepositorySpy as any,
   );
   const dummyUserId = "user123";
   const dummyAmount = 1000;
@@ -67,7 +67,7 @@ test("save should call repository save", async () => {
   // Assert
   expect(portfolioRepositorySpy.save).toHaveBeenCalledTimes(1);
   expect(portfolioRepositorySpy.save).toHaveBeenCalledWith(
-    assetsServiceSut.portfolio
+    assetsServiceSut.portfolio,
   );
 });
 
@@ -94,7 +94,7 @@ test("should buy and sell MSFT stocks", async () => {
   };
   const assetsServiceSut = new AssetsService(
     ratesGatewayFake,
-    portfolioRepositorySpy as any
+    portfolioRepositorySpy as any,
   );
   const dummyUserId = "user123";
   const dummyAmount = 1000;
@@ -105,7 +105,7 @@ test("should buy and sell MSFT stocks", async () => {
   // Assert
   const expectedAssetsQuantity = 3;
   expect(assetsServiceSut.portfolio.assets[1].quantity).toBe(
-    expectedAssetsQuantity
+    expectedAssetsQuantity,
   );
 });
 
@@ -130,7 +130,7 @@ test("should throw error if symbol not found", async () => {
   await assetsServiceSut.buildFor(dummyUserId, dummyAmount);
   // Act & Assert
   expect(() => assetsServiceSut.buy("AAPL", 5)).toThrow(
-    "Symbol AAPL not found"
+    "Symbol AAPL not found",
   );
 });
 

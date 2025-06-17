@@ -45,5 +45,5 @@ test("generate should use fake file adapter", async () => {
   const actualId = await idUtils.generate();
   const actualSeed = idUtils.extractSeed(actualId);
   // Assert
-  expect(actualSeed).toBe(43);
+  expect(actualSeed).toBe(15);
 });

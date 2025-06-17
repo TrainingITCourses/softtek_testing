@@ -1,16 +1,1 @@
-{
-  "id": "12.4",
-  "ownerId": "user123",
-  "assets": [
-    {
-      "symbol": "USD",
-      "quantity": 1000,
-      "updatedAt": "2025-05-22T11:09:06.932Z",
-      "lastPrice": 1,
-      "type": "cash",
-      "name": "USD"
-    }
-  ],
-  "updatedAt": "2025-05-22T11:09:06.932Z",
-  "lastValue": 1000
-}
+{"id":"19.4","ownerId":"user123","assets":[{"symbol":"USD","quantity":1000,"updatedAt":"2025-06-17T11:43:09.452Z","lastPrice":1,"type":"cash","name":"USD"}],"updatedAt":"2025-06-17T11:43:09.452Z","lastValue":1000}
